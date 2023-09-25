@@ -15,7 +15,11 @@ app.use(cors());
 const server = require('http').createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: '*',
+    origin: [
+      'https://www.algoviz.app',
+      'http://localhost:3000',
+      'http://localhost:3001'
+    ],
     methods: ['GET', 'POST']
     // credentials: true
   }
