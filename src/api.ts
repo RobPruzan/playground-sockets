@@ -20,7 +20,7 @@ app.use(express.text({ type: 'text/html' }));
 
 app.use(cors());
 
-const server = require('http').createServer(app);
+export const server = require('http').createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
@@ -113,10 +113,10 @@ io.on('connect', (socket) => {
   });
 });
 
-const port = process.env.PORT || 8080;
-server.listen(port, () => {
-  console.log(`listening on *:${port}`, new Date().getTime());
-});
+// const port = process.env.PORT || 8080;
+// server.listen(port, () => {
+//   console.log(`listening on *:${port}`, new Date().getTime());
+// });
 
 // Healthcheck endpoint
 app.get('/', (req, res) => {
