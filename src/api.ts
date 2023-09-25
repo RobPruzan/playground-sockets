@@ -58,6 +58,7 @@ const playgroundUsers = new Map<string, (User | { id: string })[]>();
 // let mainId = '';
 
 io.on('connect', (socket) => {
+  console.log('user connected');
   socket.on(
     'join playground',
 
