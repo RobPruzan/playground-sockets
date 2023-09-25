@@ -4,7 +4,15 @@ import { Server } from 'socket.io';
 
 export const app = express();
 
-app.use(cors({ origin: true }));
+app.use(
+  cors({
+    origin: [
+      'https://www.algoviz.app',
+      'http://localhost:3000',
+      'http://localhost:3001'
+    ]
+  })
+);
 
 app.use(express.json());
 app.use(express.raw({ type: 'application/vnd.custom-type' }));
