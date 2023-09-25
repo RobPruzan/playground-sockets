@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
   config();
 }
 // call after config() to access the env variables
-import { app, server } from './api';
+import { server } from './api';
 
 const port = process.env.PORT || 3333;
 
